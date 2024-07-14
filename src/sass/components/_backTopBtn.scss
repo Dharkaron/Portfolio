@@ -1,0 +1,14 @@
+@use '../utils' as *;
+
+/***********    Back to top button     ************/
+.go-back-top{
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 1000;
+  color: $dark-cyan;
+  transition: filter 0.2s;
+  &:hover{
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.5));
+  }
+}

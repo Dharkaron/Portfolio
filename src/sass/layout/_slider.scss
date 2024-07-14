@@ -1,0 +1,198 @@
+@use '../utils/' as *;
+
+/* Slider & button container */
+.carousel-container{
+  position: relative;
+	min-height:80vh;
+  overflow-x: hidden;
+
+  /* Slides container */
+  .slide-container{	
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+
+    width: 100%;
+    height: 50vh;
+    
+    /* slide's general styling */
+		.slide{
+      list-style-type: none;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+			width: 20%;
+			height: 60vh;
+	
+			background-position: center;
+			background-size: cover;
+			border-radius: 20px;
+
+			box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+      filter: drop-shadow( 10px 20px 10px rgba(0,0,0,0.3));
+
+			transition: all 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+			
+      /* Main slides */
+		  &:nth-child(1), &:nth-child(2) {
+        left: 5%;
+        width: 60%;
+		  }	
+      /* Next Slide */
+      &:nth-child(3) { 
+        left: 70%; 
+        transition: all 0.4s;
+      }
+      /* Hidden Slide */
+      &:nth-child(4) {  
+        opacity: 0;
+        transform: translateX(70%);
+      }		
+      /* Animation for the content of the slide */
+		  &:nth-of-type(2) .content {
+  		  display: block;
+  		  animation: slide-in 0.6s ease-in-out 0.3s forwards;
+		  }
+			
+      /* Main Slide Content */
+      .content{
+        width: fit-content;
+        max-width: 80%;
+        height: 40vh;
+        position: absolute;
+        top: 10vh;
+        left: 5%;
+        font: 400 20px inherit;
+        color: rgb(0,0,0);
+        text-shadow: 5px 5px 8px rgba(255,255,255,0.7);
+        opacity: 0;
+        display: none;
+
+        background: rgba(255,255,255,0.8);
+        border-radius: 30px;
+        padding: 15px;
+
+        & .title{
+          font-size: 30px;
+        }
+        & .description {
+          line-height: 1.7;
+          margin: 1rem 0 1.5rem;
+          padding-bottom: 1rem;
+        }
+
+        & .specification{
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: fit-content;
+          background-color: rgba(0,0,0,0.1);
+          border: 2px solid white;
+          border-radius: 8px;
+          padding: 5px;
+        }
+
+        & .github_link{
+          position: absolute;
+          bottom: 5px;
+          left: 20px;
+
+          & .github_icon{
+            height: 30px;
+            &:hover{
+              fill: $dark-cyan;
+              transform: translateY(-2px);
+              filter:drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));         
+            }
+          }
+        }
+
+        & .website_link{
+          position: absolute;
+          bottom: 5px;
+          left: 60px;
+
+          & .link_icon{
+            height: 30px;
+            &:hover{
+              fill: $dark-cyan;
+              transform: translateY(-2px);
+              filter:drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));         
+            }
+          }
+        }
+		  }
+	  }	
+  }
+
+    /* Button - Next Slide */
+    .slider-btn {		
+			position: absolute;
+			top:28%;
+			left:65%;
+			transform: translateX(-50%);
+			z-index: 10;
+			user-select: none; //? check this property
+		
+      background-color: rgba(255,255,255,0.8);
+      box-shadow:  -2px 2px 6px 1px rgba(0,0,0,0.8);
+      color: rgba(0,0,0,0.7);
+      border: 2px solid rgba(0,0,0,0.8);
+      padding: 40px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255,255,255,0.6);
+        box-shadow: -1px 1px 4px rgba(0,0,0,0.8);
+      }
+    } 
+
+}
+
+@media (width < 900px) {
+  .carousel-container{
+    .slide-container {
+      .slide{
+        height: 50vh;
+
+        &:nth-child(1), &:nth-child(2){
+          left: auto;
+          width: 75vw;
+        }
+        &:nth-child(3) { left: 100%; opacity:0;}
+        &:nth-child(4) { left: 100%; opacity:0;}
+
+        .content {
+          top: 2%;
+          left: 2%;
+          height: 43vh;
+          border-radius: 20px;
+          
+          & .title { font-size: 22px; }
+          & .description { font-size: 16px; }
+          & .specification { 
+             top: 55%;
+             left: 15px;
+             height: fit-content;
+          }
+        }
+      }     
+      
+    }
+    .slider-btn {		
+			top:68%;
+			left: 50%;
+		
+      background: linear-gradient(140deg, rgba($dark-cyan, 0.8) 0%,rgba($pale-green-1, 0.6) 50%, rgba($dark-cyan, 0.2) 100%);
+      box-shadow:  -4px 4px 8px 1px rgba(0,0,0,0.8);
+      border: 1px solid rgba(0,0,0,0.6);
+      padding: 15px 120px;
+      transition: all 0.2s;
+
+      &:hover {
+        box-shadow: -6px 6px 10px 2px rgba(0,0,0,0.6), 1px 1px 4px 1px rgba(0,0,0,0.4) inset;
+      }
+    }
+  }   
+}

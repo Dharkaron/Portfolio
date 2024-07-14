@@ -1,0 +1,53 @@
+@use '../utils' as *;
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  min-height: 40vh;
+  padding-bottom: 25px;
+  color: $main-color;
+  fill: $main-color;
+  position: relative;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  & p{
+    font-size: 22px;
+  }
+
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60vh;
+    background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url('/src/assets/img/background/background_footer.jpg');
+    background-size: cover;
+  }
+
+  &-border_wave{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;          
+      path {
+        fill: $main-color; 
+      }
+  }
+
+  @media (width < 520px){
+    & p span{
+      display: block;
+      text-align: center;
+    }
+    & p .hide-on-break{
+      display: none;
+    }
+  }
+}
