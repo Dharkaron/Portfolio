@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     height: 150vh;
-    background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url('/src/assets/img/background/background_landing.jpg');
+    background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url('./src/assets/img/background/background_landing.jpg');
     background-size: cover;
   }
   &-border-wave{
@@ -206,7 +206,6 @@
     position: relative;      
     flex-shrink: 0;
 
-    //background-image: url('/src/assets/img/profile_pic/Profile-pic-04.jpg');
     background-size: cover;     
     background-repeat: no-repeat;
 
@@ -220,7 +219,7 @@
       right: 0;
       height: 70vh;
       border-radius: inherit;
-      background-image: url('/src/assets/img/profile_pic/Profile-pic-04.jpg');
+      background-image: url('./src/assets/img/profile_pic/Profile-pic-04.jpg');
       background-size: cover;
     }
 
@@ -304,7 +303,7 @@
       right: 0;
       height: 60vh;
       border-radius: inherit;
-      background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.40) 100%), url('/src/assets/img/profile_pic/Profile-pic-04-2.jpg');
+      background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.40) 100%), url('./src/assets/img/profile_pic/Profile-pic-04-2.jpg');
       background-size: cover;
     }
     &::after{
