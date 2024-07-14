@@ -2,7 +2,7 @@
 nextSlide()
 welcomeLink()
 hideMenuOnLink()
-
+emailMe()
 
 // Main Page Slider
 function nextSlide(){
@@ -61,4 +61,3 @@ function emailMe() {
     },100)
   })
 }
-emailMe()
