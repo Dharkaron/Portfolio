@@ -18,7 +18,7 @@ function nextSlide(){
 }
 
 
-// Landing Page Welcome button (scroll/direct to first section)
+// Main Page Landing - Welcome button (scroll/direct to first section)
 function welcomeLink(){
 
   document.querySelectorAll('.welcome_link').forEach(link => {
@@ -50,14 +50,14 @@ function hideMenuOnLink(){
 }
 
 
-// Adress for the contact section
-
+// Inject and remove email address for the contact section
 function emailMe() {
   document.getElementById('mailto-link').addEventListener("click", (e)=>{
-    console.log('button has been clicked');
+    //// add the email on click, to use the mailto link
     e.target.href = "mailto:pierregasse.pro@protonmail.com"
+    //// Remove the address after a short interval (100ms)
     setTimeout(()=>{
-      e.target.removeAttribute("href")
+      e.target.href = ""
     },100)
   })
 }

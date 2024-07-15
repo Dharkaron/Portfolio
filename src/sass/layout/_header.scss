@@ -1,6 +1,6 @@
-@use '../utils' as *;
+@use '../utils/' as *;
 
-
+/* Code for the Navigation Menu */
 .navigation{
   display: flex;
   flex-direction: row;
@@ -48,7 +48,6 @@
       overflow: hidden;
       transition: color 0.15s;
 
-
       & a{
         font-size: 25px;
       }        
@@ -71,14 +70,11 @@
         background: rgb(214, 214, 214);  
       }
     }
-  }
-  
-  
+  } 
 }
 
 .fixed-top{
   background: rgba(41, 53, 61, 0.95);
-  //animation: animNav 0.4s ease-in-out 1;
   position: fixed;
   top: 0;
   right: 0;
@@ -109,18 +105,3 @@
   }
 }
 
-
-
-
-
-
-@keyframes animNav {
-  0% { 
-    opacity: 0; 
-    top: -40px; 
-  }
-  100% { 
-    opacity: 1; 
-    top: 0px; 
-  }
-}

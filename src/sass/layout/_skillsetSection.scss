@@ -1,0 +1,89 @@
+@use '../utils/' as *;
+
+.skills{
+  position: relative;
+  padding: 80px 30px 40px;
+  min-height: 100vh;
+      
+  &-title{   
+    font-size: 40px;
+    padding: 20px 12vw;
+    text-shadow: 10px 20px 10px rgba(0,0,0,0.3);
+
+    @media (width < 670px){
+      text-align: center;
+    }  
+  }
+
+  &-container{  
+    padding: 20px 0;
+
+    & h3{
+      text-indent: 14vw;     
+    }
+
+    &-grid{
+      padding: 40px 100px;
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(7, 1fr);
+      
+      justify-items: center;
+      align-items: center;
+
+      @media (width < 1300px){
+        grid-template-columns: repeat(6, 1fr);
+      }
+      @media (width < 1100px){
+        padding: 40px;
+      }
+      @media (width < 950px){
+        grid-template-columns: repeat(5, 1fr);
+      }
+      @media (width < 820px){
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (width < 670px){
+        padding: 40px 20px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (width < 520px){
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      & figure{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid grey;
+        border-radius: 20px;
+        width: 100px;
+        background: $main-color;
+
+        filter: drop-shadow( 2px 4px 6px rgba(0,0,0,0.4));
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2) inset;
+        cursor: pointer;
+
+        transition: filter 0.2s;
+
+        &:hover{
+          filter: drop-shadow( 8px 10px 10px rgba(0,0,0,0.8));
+        }
+
+        & img{
+          height: 80px;
+          width: 100%;
+          padding: 5px 0;
+          background-color: $pale-green-1;
+          box-shadow: inherit;
+          border-radius: 20px 20px 0 0;
+          object-fit: contain;
+        }
+        & figcaption{
+          align-self: center;
+        }
+      }
+    }
+  } 
+}
