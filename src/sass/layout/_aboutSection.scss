@@ -33,7 +33,7 @@
         position: relative;
         text-indent: 0;
         font-weight: 800;
-        font-size: 24px;
+        font-size: 24px !important;
         color: $pale-green-2;
 
         &:after{
@@ -48,9 +48,9 @@
           background-image: linear-gradient(to right, rgba(0,0,0, 0), rgba($pale-green-2, 0.75), rgba(0,0,0, 0));
         }
       }
-      & .span-1{
-        font-family: 'dancing script';
-        font-size: 30px;
+      & .span-after{
+        font-family: 'Times New Roman';
+        font-size: 26px;
         font-weight: 800;
       }
       & .line-height-10{
@@ -60,6 +60,7 @@
       & .text-indent-12{
         display: inline-block;
         text-indent: 12px;
+        font-size: 22px;
       }
     }
   }
@@ -100,15 +101,8 @@
       border-radius: 20%;
       box-shadow: inset 0 0 22px 4px rgb(0, 0, 0), 8px 8px 18px 4px rgba(0, 0, 0, 0.5);
     }
-    & img{
-      width: 100%;
-      height: 100%;
-      border-radius: 20%;
-      //object-fit: cover;
-      
-    }
     // text to be displayed dinamically, with JS (or just css)
-    & figcaption{
+    /* & figcaption{
       display: none;
       color: $main-color;
       font-style: italic;
@@ -117,11 +111,9 @@
       position: absolute;
       bottom: 10%;
       left: calc(50% - 135px);
-    }
+    } */
   }
 }
-
-
 
 
 

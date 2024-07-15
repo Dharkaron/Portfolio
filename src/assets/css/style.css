@@ -395,7 +395,7 @@ hr.section-border {
   position: relative;
   text-indent: 0;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 24px !important;
   color: rgb(105, 155, 126);
 }
 .about_me-content p .my-job:after {
@@ -409,9 +409,9 @@ hr.section-border {
   border: none;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(105, 155, 126, 0.75), rgba(0, 0, 0, 0));
 }
-.about_me-content p .span-1 {
-  font-family: "dancing script";
-  font-size: 30px;
+.about_me-content p .span-after {
+  font-family: "Times New Roman";
+  font-size: 26px;
   font-weight: 800;
 }
 .about_me-content p .line-height-10 {
@@ -421,6 +421,7 @@ hr.section-border {
 .about_me-content p .text-indent-12 {
   display: inline-block;
   text-indent: 12px;
+  font-size: 22px;
 }
 .about_me-picture {
   border-radius: 20%;
@@ -431,6 +432,16 @@ hr.section-border {
   flex-shrink: 0;
   background-size: cover;
   background-repeat: no-repeat;
+  /* & figcaption{
+    display: none;
+    color: $main-color;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgb(0,0,0);
+
+    position: absolute;
+    bottom: 10%;
+    left: calc(50% - 135px);
+  } */
 }
 .about_me-picture::before {
   content: "";
@@ -455,20 +466,6 @@ hr.section-border {
   height: 100%;
   border-radius: 20%;
   box-shadow: inset 0 0 22px 4px rgb(0, 0, 0), 8px 8px 18px 4px rgba(0, 0, 0, 0.5);
-}
-.about_me-picture img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20%;
-}
-.about_me-picture figcaption {
-  display: none;
-  color: rgb(250, 250, 250);
-  font-style: italic;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0);
-  position: absolute;
-  bottom: 10%;
-  left: calc(50% - 135px);
 }
 
 @media (width < 1200px) {
