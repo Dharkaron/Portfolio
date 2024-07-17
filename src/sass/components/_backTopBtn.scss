@@ -3,12 +3,39 @@
 /***********    Link Back to Page top    ************/
 .go-back-top{
   position: fixed;
-  bottom: 30px;
+  bottom: 60px;
   right: 40px;
   z-index: 1000;
   color: $dark-cyan;
   transition: filter 0.2s;
+
+  /* text appearing below the button on hover */
+  &::after{
+    opacity: 0;
+    content: "Retourner en haut";
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 44px);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(50%);
+    transition: all 0.4s ease-in-out;
+  }
+
   &:hover{
     filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.5));
   }
+  &:hover::after{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Remove text on small screen */
+  @media (width < 700px){
+    bottom:30px;
+    &::after{
+      display:none;
+    }
+  }
 }
+

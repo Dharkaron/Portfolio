@@ -46,30 +46,16 @@
     &-btn{
       position: relative;
       overflow: hidden;
-      transition: color 0.15s;
+      transition: all 0.15s ease-in-out;
 
       & a{
         font-size: 25px;
       }        
       &:hover{
       color: rgb(214, 214, 214);
+      transform: scale(1.06);
       } 
     }      
-    .selected-menu{
-      font-weight: 800;
-      color: rgb(214, 214, 214);
-
-      &::after{
-        content: "";
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 75%;
-        height: 2px;
-        background: rgb(214, 214, 214);  
-      }
-    }
   } 
 }
 

@@ -44,7 +44,6 @@ function hideMenuOnLink(){
     button.addEventListener("click", () => {
       //// Change checked value from input
       menuInput.checked = false
-      
     })
   })
 }
@@ -60,4 +59,38 @@ function emailMe() {
       e.target.href = ""
     },100)
   })
+}
+
+
+/* 
+Ideas for the welcome button:
+onclic, change the background to ":hover" properties, 
+make an inset ripple effect, 
+move to first section, 
+reset background to default
+
+=> See how to slow down scroll speed on anchor link
+*/
+
+
+// show adn hide the goBackTop button (work in progress)
+function revealButton() {
+  const BackTopBtn = document.querySelector('.go-back-top')
+  const navbar = document.querySelector(".navigation")
+  
+  BackTopBtn.addEventListener("click", (e)=>{
+    //e.preventDefault()
+    console.log(document.scrollY)
+  })
+
+ /*  if (window.scrollY > 600) {
+    BackTopBtn.classList.remove('hidden')
+  } else if(window.scrollY < 590){
+    BackTopBtn.classList.add('hidden')
+  } */
+  if (window.scrollY > 600) {
+    navbar.style.display = "none"
+  } else if(window.scrollY < 590){
+    navbar.style.display ="flex"
+  }
 }

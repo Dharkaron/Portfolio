@@ -79,12 +79,9 @@
       margin-top: 40px !important;
       transition: all 0.2s ease-in-out;
 
-      &:hover{
+      &:hover, &:active{
         background-color: $main-color;
         color: rgba(0,0,0,0.8);
-      }
-      &:active{
-        background-color: inherit;
       }
     }
     & .welcome_btn-small{
