@@ -2,13 +2,19 @@
 
 /* Code for the Navigation Menu */
 .navigation{
+  /* position: fixed;
+  top:0;
+  right: 0;
+  left: 0; */
+
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
   color: rgba(214, 214, 214, 0.7); 
-  position: relative;
+  //position: relative;
   max-width: 100vw;
+  height: 50px;
 
   &-dropdown_label{
     position: relative;
@@ -53,20 +59,23 @@
       }        
       &:hover{
       color: rgb(214, 214, 214);
-      transform: scale(1.06);
+      transform: scale(1.04);
       } 
     }      
   } 
 }
 
 .fixed-top{
-  background: rgba(41, 53, 61, 0.95);
   position: fixed;
-  top: 0;
+  top:0;
   right: 0;
   left: 0;
+
+  background: rgba(41, 53, 61, 0.95);
   z-index: 100;
   box-sizing: border-box;
+  opacity: 0;
+  animation: appear 0.6s forwards;
 }
 
 /*******   Navigation Menu Media Queries   ********/
@@ -91,3 +100,25 @@
   }
 }
 
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappear{
+  100%{
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

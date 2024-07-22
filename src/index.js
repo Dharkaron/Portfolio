@@ -1,10 +1,13 @@
 
-nextSlide()
-welcomeLink()
-hideMenuOnLink()
-emailMe()
+import { welcomeLink } from "./assets/scripts/welcomeLink.js";
 
-// Main Page Slider
+// Landing Button Animation 
+welcomeLink()
+
+
+
+
+// Main Page Slider (Projects Overview)
 function nextSlide(){
   
   const slider = document.querySelector('.slide-container');
@@ -12,26 +15,11 @@ function nextSlide(){
   
   sliderBtn.addEventListener('click', () =>{
     const items = document.querySelectorAll('.slide');
+    console.log(items, items[0])
     slider.append(items[0])
   }, false)
-
 }
-
-
-// Main Page Landing - Welcome button (scroll/direct to first section)
-function welcomeLink(){
-
-  document.querySelectorAll('.welcome_link').forEach(link => {
-
-    link.addEventListener('click', (e) => {
-      e.preventDefault()
-
-      document.getElementById('about_me').scrollIntoView({
-        behavior: "smooth",
-      }); 
-    })
-  }) 
-}
+nextSlide()
 
 
 
@@ -47,6 +35,8 @@ function hideMenuOnLink(){
     })
   })
 }
+hideMenuOnLink()
+
 
 
 // Inject and remove email address for the contact section
@@ -60,37 +50,38 @@ function emailMe() {
     },100)
   })
 }
+emailMe()
 
 
-/* 
-Ideas for the welcome button:
-onclic, change the background to ":hover" properties, 
-make an inset ripple effect, 
-move to first section, 
-reset background to default
-
-=> See how to slow down scroll speed on anchor link
-*/
 
 
-// show adn hide the goBackTop button (work in progress)
-function revealButton() {
+// show and hide the goBackTop button, & the navbar
+const handleSCroll = () => {
   const BackTopBtn = document.querySelector('.go-back-top')
   const navbar = document.querySelector(".navigation")
+  const landingSection = document.querySelector(".landing-introduction")
   
-  BackTopBtn.addEventListener("click", (e)=>{
-    //e.preventDefault()
-    console.log(document.scrollY)
-  })
+  // Listen to the window scrolling event
+  window.addEventListener("scroll", (e)=>{
+    e.preventDefault()
 
- /*  if (window.scrollY > 600) {
-    BackTopBtn.classList.remove('hidden')
-  } else if(window.scrollY < 590){
-    BackTopBtn.classList.add('hidden')
-  } */
-  if (window.scrollY > 600) {
-    navbar.style.display = "none"
-  } else if(window.scrollY < 590){
-    navbar.style.display ="flex"
-  }
+    // Condition to hide or show the elements
+
+    if (window.scrollY > 400) {
+      BackTopBtn.classList.remove('hidden')
+    } else {
+      BackTopBtn.classList.add('hidden')
+    }
+
+    if(window.scrollY > 100){
+      navbar.classList.add('fixed-top')
+      landingSection.style.marginTop = `calc(15vh + 50px)`  
+    } else {
+      navbar.classList.remove('fixed-top')
+      landingSection.style.marginTop = `15vh`
+    }
+
+  })
 }
+handleSCroll()
+

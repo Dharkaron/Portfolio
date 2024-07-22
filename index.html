@@ -12,7 +12,9 @@
     <!-- Fontawesome's Icons -->
     <script src="https://kit.fontawesome.com/37f15e1b46.js" crossorigin="anonymous"></script>
     <!-- JS Scripts -->
-    <script type="module" src="./src/assets/scripts/main.js" defer></script>
+    <script type="module" src="./src/index.js" defer></script>
+    <!-- <script type="module" src="./src/assets/scripts/customScroll.js" defer></script> -->
+
     <!-- StyleSheets -->
     <link rel="stylesheet" href="./src/assets/css/style.css">
     <!-- Font style from Google Font Api -->
@@ -28,11 +30,11 @@
 
   <body>
 
-    <aside class="go-back-top"><a href="#"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></a></aside>
+    <aside class="go-back-top hidden"><a href="#landing-top" aria-label="link to page top"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></a></aside>
 
     <header class="landing" id="landing-top">
 
-      <nav class="navigation fixed-top">
+      <nav class="navigation">
         <input type="checkbox" class="navigation-dropdown_input" name="toggle" id="toggle">
         <label class="navigation-dropdown_label" for="toggle">Menu</label>
 
@@ -52,8 +54,10 @@
         </figure>
         <h1 class="landing-introduction-title">Bonjour, je m'appelle Pierre</h1>
         <h2 class="landing-introduction-subtitle">Je suis développeur Frontend</h2>
-        <button class="welcome_btn welcome_link">Bienvenue sur mon Portfolio</button>
-        <button class="welcome_btn-small welcome_link">Bienvenue</button>
+        <button class="welcome_btn welcome_link welcome_btn-light">Bienvenue sur mon Portfolio<span class="ripple-1"></span>
+          <span class="ripple-2"></span></button>
+        <button class="welcome_btn-small welcome_link welcome_btn-light">Bienvenue<span class="ripple-1"></span>
+          <span class="ripple-2"></span></button>
         <!-- Changer le bouton (texte/signe) pour être plus interactif (envie de cliquer dessus) -->
 
       </section>   

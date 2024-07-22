@@ -16,8 +16,6 @@ html{
 }
 
 body{
-  -webkit-font-smoothing: antialiased;
-
   max-width: 100vw;
   min-width: 320px;
   min-height: 100vh;
@@ -57,7 +55,7 @@ a, button{
 
 // Class to hide component/element
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 
@@ -79,3 +77,4 @@ hr.section-border{
     animation: none;
   }
 }
+

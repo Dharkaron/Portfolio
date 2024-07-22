@@ -29,7 +29,6 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
   max-width: 100vw;
   min-width: 320px;
   min-height: 100vh;
@@ -65,7 +64,7 @@ a, button {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Styling of 'hr' border */
@@ -93,6 +92,7 @@ hr.section-border {
   z-index: 1000;
   color: rgb(0, 138, 137);
   transition: filter 0.2s;
+  animation: appear 0.6s forwards;
   /* text appearing below the button on hover */
   /* Remove text on small screen */
 }
@@ -304,13 +304,17 @@ hr.section-border {
 }
 /* Code for the Navigation Menu */
 .navigation {
+  /* position: fixed;
+  top:0;
+  right: 0;
+  left: 0; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
   color: rgba(214, 214, 214, 0.7);
-  position: relative;
   max-width: 100vw;
+  height: 50px;
 }
 .navigation-dropdown_label {
   position: relative;
@@ -353,17 +357,19 @@ hr.section-border {
 }
 .navigation-menu-btn:hover {
   color: rgb(214, 214, 214);
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .fixed-top {
-  background: rgba(41, 53, 61, 0.95);
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  background: rgba(41, 53, 61, 0.95);
   z-index: 100;
   box-sizing: border-box;
+  opacity: 0;
+  animation: appear 0.6s forwards;
 }
 
 /*******   Navigation Menu Media Queries   ********/
@@ -383,6 +389,26 @@ hr.section-border {
   }
   .navigation-dropdown_input:checked ~ .navigation-menu {
     display: flex;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes disappear {
+  100% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .about_me {
@@ -860,7 +886,7 @@ hr.section-border {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-top: 20vh;
+  margin-top: 15vh;
 }
 .landing-introduction-picture {
   border-radius: 50%;
@@ -892,22 +918,67 @@ hr.section-border {
   font-size: 32px;
 }
 .landing-introduction .welcome_btn, .landing-introduction .welcome_btn-small {
+  position: relative;
   font-size: 28px;
   font-weight: 600;
-  color: inherit;
-  background-color: transparent;
   border: 1px solid rgb(250, 250, 250);
   border-radius: 8px;
   padding: 8px;
   margin-top: 40px !important;
-  transition: all 0.2s ease-in-out;
+  /*********  Classes called with JavaScript  ************/
 }
 .landing-introduction .welcome_btn:hover, .landing-introduction .welcome_btn:active, .landing-introduction .welcome_btn-small:hover, .landing-introduction .welcome_btn-small:active {
   background-color: rgb(250, 250, 250);
   color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+}
+.landing-introduction .welcome_btn .ripple-1, .landing-introduction .welcome_btn .ripple-2, .landing-introduction .welcome_btn-small .ripple-1, .landing-introduction .welcome_btn-small .ripple-2 {
+  position: absolute;
+  opacity: 0;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  border: 2px solid rgba(250, 250, 250, 0.4);
+  border-radius: 20px;
+}
+.landing-introduction .welcome_btn .ripple-2, .landing-introduction .welcome_btn-small .ripple-2 {
+  animation-delay: 1s;
+}
+.landing-introduction .welcome_btn .animateOnClick, .landing-introduction .welcome_btn-small .animateOnClick {
+  animation: ripple 1s linear;
+}
+.landing-introduction .welcome_btn .animateOnClick-2, .landing-introduction .welcome_btn-small .animateOnClick-2 {
+  animation: ripple 1s 0.2s linear;
 }
 .landing-introduction .welcome_btn-small {
   display: none;
+}
+.landing-introduction .welcome_btn-light {
+  color: rgb(250, 250, 250);
+  background-color: transparent;
+  transition: 0.6s;
+}
+.landing-introduction .welcome_btn-dark {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+}
+@keyframes ripple {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  85%, 100% {
+    transform: scale(1.6);
+    opacity: 0;
+    border-radius: 16px;
+  }
 }
 @media (width < 700px) {
   .landing-introduction {
