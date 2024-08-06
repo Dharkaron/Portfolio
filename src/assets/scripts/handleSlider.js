@@ -1,4 +1,3 @@
-//import { renderSvgIcon } from "./svgMaker.js";
 import { fetchJsonData } from "./fetchJsonData.js";
 import { setMultipleAttributes } from "./setAttributes.js";
 

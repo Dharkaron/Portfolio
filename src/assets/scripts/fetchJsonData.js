@@ -2,7 +2,7 @@
 export async function fetchJsonData(fileName){ 
   
   try{
-    let response = await fetch(`/src/assets/data/${fileName}.json`)
+    let response = await fetch(`https://dharkaron.github.io/Portfolio/src/assets/data/${fileName}.json`)
     .then(response => {
         if(!response.ok){
           throw new Error (`HTTP error! Status: ${response.status}`)

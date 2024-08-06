@@ -1,28 +1,28 @@
 [
   {
     "id":"p4",
-    "img":"url(./src/assets/img/project_img/ohmyfood_p4.jpg)",
+    "img":"url(https://dharkaron.github.io/Portfolio/src/assets/img/project_img/ohmyfood_p4.jpg)",
     "title":"OH MY FOOD",
     "description":"Réservations en ligne de menu gastronomique.<br> Application orienté mobile.",
     "specification":"HTML & CSS"
   },
   {
     "id":"p9",
-    "img":"url(./src/assets/img/project_img/nina_p9.webp)",
+    "img":"url(https://dharkaron.github.io/Portfolio/src/assets/img/project_img/nina_p9.webp)",
     "title":"NINA CARDUCCI",
     "description":"Portfolio d'une photographe professionnelle.",
     "specification":"Référencement SEO"
   },
   {
     "id":"p10",
-    "img":"url(./src/assets/img/project_img/724_p10.png)",
+    "img":"url(https://dharkaron.github.io/Portfolio/src/assets/img/project_img/724_p10.png)",
     "title":"724 EVENTS",
     "description":"Site vitrine d'une agence évènementielle.",
     "specification":"Corrections de Bugs"
   },
   {
     "id":"p11",
-    "img":"url(./src/assets/img/project_img/bank_p11.jpeg)",
+    "img":"url(https://dharkaron.github.io/Portfolio/src/assets/img/project_img/bank_p11.jpeg)",
     "title":"ARGENT BANK",
     "description":"Développement d'une application pour une banque en ligne.",
     "specification":"React & Redux"
