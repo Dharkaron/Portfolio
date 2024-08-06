@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass":"sass --watch src/style.scss:src/assets/css/style.css"
+    "sass": "sass --watch src/style.scss:src/assets/css/style.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.24.8",
     "sass": "^1.77.5"
   }
 }

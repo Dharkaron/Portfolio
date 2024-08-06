@@ -16,6 +16,10 @@
     height: 50vh;
     
     /* slide's general styling */
+    .open-modal{
+      cursor: pointer;
+    }
+
 		.slide{
       list-style-type: none;
       position: absolute;
@@ -28,25 +32,34 @@
 			background-size: cover;
 			border-radius: 20px;
 
-			box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+			box-shadow: 0 0 10px 5px rgba(255 255 255 / 0.5) inset;
       filter: drop-shadow( 10px 20px 10px rgba(0,0,0,0.3));
 
-			transition: all 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+			transition: all 0.4s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+      
 			
       /* Main slides */
 		  &:nth-child(1), &:nth-child(2) {
         left: 5%;
         width: 60%;
 		  }	
+      &:nth-child(2){
+        z-index: 2;
+
+        &:hover{
+          box-shadow: 0 0 20px 10px rgba(0 0 0 / .4) inset;
+          filter:drop-shadow( 10px 20px 10px rgba(0,0,0,0.3)) grayscale(50%);
+        }
+      }
       /* Next Slide */
       &:nth-child(3) { 
-        left: 70%; 
-        transition: all 0.4s;
+        left: 70%;
       }
       /* Hidden Slide */
-      &:nth-child(4) {  
+      &:nth-child(1), &:nth-child(4) {  
         opacity: 0;
-        transform: translateX(70%);
+        z-index: 0;
       }		
       /* Animation for the content of the slide */
 		  &:nth-of-type(2) .content {
@@ -70,6 +83,7 @@
         display: none;
 
         background: rgba(255,255,255,0.8);
+        box-shadow:  2px 2px 12px rgba(0 0 0 / .5);
         border-radius: 30px;
         padding: 15px;
 
@@ -84,46 +98,21 @@
 
         & .specification{
           position: absolute;
-          bottom: 20px;
-          right: 20px;
+          top: 55%;
+          left: 15px;
           width: fit-content;
           background-color: rgba(0,0,0,0.1);
           border: 2px solid white;
           border-radius: 8px;
           padding: 5px;
-        }
-
-        & .github_link{
-          position: absolute;
-          bottom: 5px;
-          left: 20px;
-
-          & .github_icon{
-            height: 30px;
-            &:hover{
-              fill: $dark-cyan;
-              transform: translateY(-2px);
-              filter:drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));         
-            }
-          }
-        }
-
-        & .website_link{
-          position: absolute;
-          bottom: 5px;
-          left: 60px;
-
-          & .link_icon{
-            height: 30px;
-            &:hover{
-              fill: $dark-cyan;
-              transform: translateY(-2px);
-              filter:drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));         
-            }
-          }
-        }
-		  }
-	  }	
+        
+          height: fit-content;
+       }
+      }
+	  }
+    .active{
+      cursor: pointer;
+    }	
   }
 
     /* Button - Next Slide */
@@ -132,7 +121,7 @@
 			top:28%;
 			left:65%;
 			transform: translateX(-50%);
-			z-index: 10;
+			z-index: 3;
 			user-select: none;
 		
       background-color: rgba(255,255,255,0.8);
@@ -172,11 +161,6 @@
           
           & .title { font-size: 22px; }
           & .description { font-size: 16px; }
-          & .specification { 
-             top: 55%;
-             left: 15px;
-             height: fit-content;
-          }
         }
       }     
       

@@ -1,0 +1,168 @@
+@use '../utils' as *;
+
+.modal-container{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+
+  .modal{
+    position: relative;
+    z-index: 1001;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
+    
+    padding: 10px;
+    background: rgba(250,250,250,1);
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 20px;
+    box-shadow: 0 0 14px 1px rgba(0,0,0,0.3), inset 0 0 8px 0 rgba(0,0,0,0.8);
+    
+    &-title{
+      font-size: 32px;
+      text-align: center;
+      margin: 10px auto 12px;
+      padding: 4px 16px;
+      width: fit-content;
+
+      //background: rgb(245, 239, 213);
+      background: rgba($dark-cyan, 0.8);
+
+      border-radius: 10px;
+      border: 2px solid rgb(0, 109, 109);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    &-subtitle{
+      display: inline;
+      text-shadow:
+      2px 2px $main-color,
+      2px -2px $main-color,
+      -2px 2px $main-color,
+      -2px -2px $main-color;
+      box-shadow:
+      inset 0 -0.175em $main-color,
+      inset 0 -0.2em #000;
+      background-size: 1px 1em;
+    
+    }
+    &-content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-height: 35vh;
+      overflow-y: scroll;
+
+      &-picture{
+        align-self: flex-end;
+        margin: 10px auto;
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+        filter: drop-shadow(0 0 4px rgba(0,0,0,1));
+      }
+            
+      &-description{
+        list-style: initial;
+        text-align: left;
+        margin-left: 10px;
+        align-self: center;
+      }
+      &-description li{
+        background: rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 0 4px;
+        margin-bottom: 10px;
+        margin-left:10px;
+        list-style: initial;
+      }
+        
+    }
+    &-links-wrapper{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      gap:80px;
+
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+
+      & .hyperlink{
+
+        &:hover > .hyperlink-icon, &:hover > .hyperlink-title{
+          fill: $dark-cyan;
+          color: #000;
+          transform: translateY(-2px);
+          filter:drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));
+        }
+        &-icon{
+          height: 30px;
+          transition: 0.2s;
+        }
+        &-title{
+          color: $main-color;
+          font-weight: 700;
+
+          padding:4px 8px;
+          background: rgba($dark-cyan, 0.8);
+          border-radius: 6px;
+          box-shadow: 0 0 6px rgba(0,0,0,0.5), inset 0 0 8px 1px rgba(0,0,0,0.4);
+
+          transition:0.2s;
+        }
+      }  
+    } 
+    & .close-modal{
+      position: absolute;
+      top:-10px;
+      right: -10px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: rgba($dark-cyan, 0.8);
+      border: 2px solid rgb(0, 109, 109);
+      box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.8);
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (width < 1024px){
+  .modal-content{
+    display: block !important;
+    max-height: 30vh !important;
+  }
+  .modal-content-picture{
+    display: none;
+  }
+  .modal-content-text-description{
+    text-align: justify;
+    & li{
+      text-align: justify;
+    }
+  }
+}
+@media (width < 520px){
+  .modal-links-wrapper{
+    bottom: 10px;
+  }
+  .hyperlink-title{
+    display: none;
+  }
+}

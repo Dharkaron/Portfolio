@@ -1,0 +1,54 @@
+[
+  {
+    "id":"p4",
+    "title":"OH MY FOOD",   
+    "subtitle":"Amélioration de l'interface d'un site mobile avec des animations CSS",
+    "description":
+       ["Website en 'mobile-first' <i>(mise en avant du coté 'responsive' du développement Web)</i>",
+        "Découverte et usage d'animations css",
+        "Organisation des fichiers de style avec Sass"
+        ],
+    "picture":"/src/assets/img/project_img/ohmyfood_p4.jpg",
+    "github":"https://github.com/dharkaron/OC_P4-Ohmyfood",
+    "website":"https://dharkaron.github.io/OC_P4-Ohmyfood/"
+  },
+  {
+    "id":"p9",
+    "title":"NINA CARDUCCI",   
+    "subtitle":"subtitle",
+    "description":
+       ["template a",
+        "template b",
+        "template c",
+        "template d"],
+    "picture":"/src/assets/img/project_img/nina_p9.webp",
+    "github":"https://github.com/dharkaron/OC_P9-Nina",
+    "website":"https://dharkaron.github.io/OC_P9-Nina/"
+  },
+  {
+    "id":"p10",
+    "title":"724 EVENTS",   
+    "subtitle":"subtitle",
+    "description":
+       ["template a",
+        "template b",
+        "template c",
+        "template d"],
+    "picture":"/src/assets/img/project_img/724_p10.png",
+    "github":"https://github.com/dharkaron/OC_P10-724events",
+    "website":""
+  },
+  {
+    "id":"p11",
+    "title":"ARGENT BANK",   
+    "subtitle":"subtitle",
+    "description":
+       ["template a",
+        "template b",
+        "template c",
+        "template d"],
+    "picture":"/src/assets/img/project_img/bank_p11.jpeg",
+    "github":"https://github.com/dharkaron/OC_P11_ArgentBank",
+    "website":""
+  }
+]

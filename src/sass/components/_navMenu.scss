@@ -1,26 +1,21 @@
 @use '../utils/' as *;
 
 /* Code for the Navigation Menu */
-.navigation{
-  /* position: fixed;
-  top:0;
-  right: 0;
-  left: 0; */
-
+.navbar{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  color: rgba(214, 214, 214, 0.7); 
-  //position: relative;
+  color: rgba(214, 214, 214, 0.7);
   max-width: 100vw;
   height: 50px;
 
-  &-dropdown_label{
+  &-menu-btn{
     position: relative;
     display: none;
-    padding: 5px 30px;
-    margin-top: 10px;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
     font-size: 28px;
     cursor: pointer;
 
@@ -29,40 +24,49 @@
 			position: absolute;
 			top: 50%;
 			right: 4px;
-			transform: translateY(-50%);
+			transform: translateY(-25%);
 			width: 0; 
 			height: 0; 
-			border-left: 5px solid transparent;
-			border-right: 5px solid transparent;
-			border-top: 5px solid $main-color;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 8px solid $main-color;
 			transition:transform 1s;	
+      transform-origin: 8px 2px;
 		}
   }
-  &-dropdown_input{
+  &-menu-toggle{
     display: none;
   }	
-        
-  &-menu{    
-    padding: 5px 20px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-   
-    &-btn{
-      position: relative;
-      overflow: hidden;
-      transition: all 0.15s ease-in-out;
+     
+  &-menu-wrapper{
+    overflow:hidden;
+		width:100%;
+		
+		transition:0.8s;
 
-      & a{
-        font-size: 25px;
-      }        
-      &:hover{
-      color: rgb(214, 214, 214);
-      transform: scale(1.04);
-      } 
-    }      
-  } 
+    & .navbar-menu{    
+      padding: 5px 20px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+     
+      &-item{
+        position: relative;
+        transition:0.15s ease-in-out;
+  
+        & a{
+          font-size: 25px;
+          position: relative;
+
+        }        
+        &:hover{
+        color: rgb(214, 214, 214);
+        transform: scale(1.04);
+        } 
+      }      
+    } 
+  }
 }
 
 .fixed-top{
@@ -80,45 +84,36 @@
 
 /*******   Navigation Menu Media Queries   ********/
 @media (width < 1024px){
-  .navigation{
+  .navbar{
   flex-direction: column;
   align-items: center;
+  height: auto;
 
-    &-menu{
-      display: none;
+  &-menu-btn{
+    display: flex;      
+  }
+  // opening (and closing) of the menu depending of the "checked" value of the input
+  &-menu-toggle:checked ~ .navbar-menu-wrapper{
+	max-height:20rem;
+  }
+  &-menu-toggle:checked ~ .navbar-menu-btn::after{
+    transform: rotate(180deg);
+  }
+  &-menu-wrapper{
+    max-height: 0;
+
+    & .navbar-menu{
       flex-direction: column;
       align-items: center;
       gap: 20px;
     }
-    &-dropdown_label{
-      display: block;
-      
-    }
-    &-dropdown_input:checked ~ .navigation-menu{
-      display: flex;
-    }
+  }
   }
 }
 
 
-@keyframes appear{
-  0%{
-    opacity: 0;
-    transform: translateY(-50%);
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes disappear{
-  100%{
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  0%{
-    opacity: 1;
-    transform: translateY(0);
-  }
+// Prevent selection and/or click on element
+.unselectable{
+	pointer-events:none;
+	user-select:none;
 }
