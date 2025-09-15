@@ -442,15 +442,14 @@ hr.section-border {
   box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.3), inset 0 0 8px 0 rgba(0, 0, 0, 0.8);
 }
 .modal-container .modal-title {
-  font-size: 32px;
+  font-size: 34px;
+  font-weight: 800;
   text-align: center;
   margin: 10px auto 12px;
   padding: 4px 16px;
   width: fit-content;
-  background: rgba(0, 138, 137, 0.8);
-  border-radius: 10px;
-  border: 2px solid rgb(0, 109, 109);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .modal-container .modal-subtitle {
   display: inline;
@@ -530,6 +529,10 @@ hr.section-border {
   border: 2px solid rgb(0, 109, 109);
   box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
+  transition: 0.5s;
+}
+.modal-container .modal .close-modal:hover {
+  transform: scale(1.2) rotate(180deg);
 }
 
 @media (width < 1024px) {
