@@ -115,7 +115,7 @@
                 <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
             </g>
             <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                <path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
+                <path filter:drop-shadow(2px 4px 4px rgba(0 0 0  0.5)); style="filter: drop-shadow(2px 4px 4px rgba(0 0 0 / 0.5));" d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
             </g>
         </g>
       </svg>
@@ -130,16 +130,20 @@
       
 
       <section class="about_me">
-        <article class="about_me-content">
-          <h2 class="about_me-content-title color-dark_cyan">À propos de moi...</h2>
-          <div class="about_me-content-text">
-            <p><span class="text-indent-12">Je</span> m'appelle Pierre Gasse, 34 ans, Intégrateur/développeur Frontend. <br><span class="my-job line-height-10 text-indent-12">Mon métier<span class="span-after"> :</span></span>  Concevoir des interfaces visuelles complètes et réactives pour vos applications et sites web.<br><span class="line-height-10 text-indent-12">Suite</span> à ma formation de 9 mois avec openclassroom (2023-2024),<br>je recherche des missions, de plus ou moins longue durée, pour mettre en pratique mes acquis, et continuer à développer mes compétences et savoir-faire.</p>
-          </div>
-  
+
+        <h2 class="about_me-title color-dark_cyan">Je me présente...</h2>
+
+        <article class="about_me-content">             
+            <p class="about_me-content-text"><span class="text-indent-12">Je</span> m'appelle Pierre Gasse, 34 ans, Intégrateur/développeur Frontend. <br><span class="my-job line-height-10 text-indent-12">Mon métier<span class="span-after"> :</span></span>  Concevoir des interfaces visuelles complètes et réactives pour vos applications et sites web.
+              <br><span class="line-height-10 text-indent-12">Je</span> concentre mon travail sur une bonne maitrise des bases de la programmation front-end (html/css/Js)<!-- mise en évidence -->, mais je peux m'adapter pour utiliser différente library et framework selon les travaux à réaliser. <!-- cf categorie "compétences" -->
+              
+              <br><span class="line-height-10 text-indent-12">Je</span> suis toujours à la recherche de projets pour continuer à me perfectionner, alors n'hésitez pas à me contacter pour en discuter (lien vers section contact)</p>
+           
+          <figure class="about_me-content-picture"></figure>
+
         </article>
 
-        <figure class="about_me-picture">   
-        </figure>
+        
 
         <hr class="section-border">
       </section>
@@ -148,15 +152,16 @@
       <!-- Projects Overview -->
       <section class="projects" id="projects">
 
-        <article class="projects-header">          
-          <h2 class="projects-header-title color-dark_cyan">Mes derniers Projets :</h2>       
-         </article> 
+                  
+          <h2 class="projects-title color-dark_cyan">Mes derniers Projets :</h2>       
+         
                  
           <!--// conteneur du carousel/slider -->
         <article class="carousel-container">
             <ul class="slide-container">
-                          
-               <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/nina_p9.webp)">                 
+                         
+              <!-- Code injected with Js from Json data files -->
+               <!-- <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/nina_p9.webp)">                 
                  <div class="content unselectable">
                      <h2 class="title">"NINA CARDUCCI"</h2>
                      <p class="description">Portfolio d'une photographe professionnelle.</p>
@@ -185,7 +190,7 @@
               <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/ohmyfood_p4.jpg)">                 
                 <div class="content">
                     <h2 class="title">"OH MY FOOD"</h2>
-                    <!-- <p class="description">Réservations en ligne de menu gastronomique.<br> Application orienté mobile.</p>
+                    <p class="description">Réservations en ligne de menu gastronomique.<br> Application orienté mobile.</p>
                     <p class="specification">HTML & CSS</p>
                     <a class="github_link" 
                         title="Code du projet" 
@@ -204,7 +209,7 @@
                        <svg class="link_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                         <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/>
                       </svg>
-                     </a> -->
+                     </a>
                 </div>
               </li>
                   
@@ -240,7 +245,7 @@
                         </svg>
                      </a>
                  </div>
-               </li>
+               </li> -->
                            
           </ul>
           <i class="fa-solid fa-arrow-right slider-btn next-slide"></i>
