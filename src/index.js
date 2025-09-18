@@ -1,5 +1,5 @@
 import { welcomeLink, welcomeTest } from "./assets/scripts/welcomeBtn.js";
-import { nextSlide, projectSlider } from "./assets/scripts/handleSlider.js";
+import { displayproject } from "./assets/scripts/handleProjects.js";
 import { handleModal } from "./assets/scripts/modal.js";
 import { handleSCroll } from "./assets/scripts/handleScroll.js";
 import { emailMe } from "./assets/scripts/handleMailTo.js";
@@ -13,8 +13,8 @@ import { handleLink } from "./assets/scripts/handleLink.js";
 
 
 // Main Page Projects Slider 
-  projectSlider()
-  nextSlide()
+  displayproject()
+  //nextSlide()
 
 
 // Main Page Modals display

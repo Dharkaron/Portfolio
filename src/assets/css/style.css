@@ -429,8 +429,9 @@ hr.section-border {
   position: relative;
   z-index: 1001;
   margin: auto;
-  width: 70vw;
-  height: 70vh;
+  width: 75vw;
+  height: 80vh;
+  overflow-y: scroll;
   padding: 10px;
   background: rgb(250, 250, 250);
   display: flex;
@@ -461,7 +462,6 @@ hr.section-border {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-height: 35vh;
-  overflow-y: scroll;
 }
 .modal-container .modal-content-picture {
   align-self: flex-end;
@@ -517,8 +517,8 @@ hr.section-border {
 }
 .modal-container .modal .close-modal {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 5px;
+  right: 5px;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -532,7 +532,7 @@ hr.section-border {
   transition: 0.5s;
 }
 .modal-container .modal .close-modal:hover {
-  transform: scale(1.2) rotate(180deg);
+  transform: scale(1.2) rotate(10deg);
 }
 
 @media (width < 1024px) {
@@ -557,6 +557,11 @@ hr.section-border {
   .hyperlink-title {
     display: none;
   }
+  .modal .close-modal {
+    height: 30px !important;
+    width: 30px !important;
+    font-size: 20px !important;
+  }
 }
 .about_me {
   position: relative;
@@ -564,8 +569,7 @@ hr.section-border {
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 80px 30px;
-  min-height: 100vh;
+  padding: 80px 30px 150px 30px;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -574,10 +578,20 @@ hr.section-border {
   text-shadow: 10px 20px 10px rgba(0, 0, 0, 0.3);
   font-size: 40px;
 }
+@media (width < 670px) {
+  .about_me-title {
+    text-align: center;
+  }
+}
 .about_me-content {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   min-height: inherit;
   margin-top: 40px;
+  gap: 5%;
+  padding: 0 5vw;
+  height: fit-content;
 }
 .about_me-content-text {
   font-size: 22px;
@@ -589,7 +603,7 @@ hr.section-border {
   position: relative;
   text-indent: 0;
   font-weight: 800;
-  font-size: 24px !important;
+  font-size: 26px !important;
   color: rgb(105, 155, 126);
 }
 .about_me-content-text .my-job:after {
@@ -617,37 +631,28 @@ hr.section-border {
   text-indent: 12px;
   font-size: 22px;
 }
+.about_me-content-text .skills-linkto {
+  display: inline-block;
+  color: rgb(179, 84, 21);
+  font-weight: bolder;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  line-height: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.about_me-content-text .skills-linkto:hover {
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+  transform: scale(1.1);
+}
 .about_me-content-picture {
-  border-radius: 20%;
   height: 70vh;
   aspect-ratio: 0.8/1;
   box-sizing: border-box;
-  position: relative;
-  flex-shrink: 0;
-  background-size: cover;
   background-repeat: no-repeat;
-}
-.about_me-content-picture::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70vh;
-  border-radius: inherit;
   background-image: url("https://dharkaron.github.io/Portfolio/src/assets/img/profile_pic/Profile-pic-04.jpg");
   background-size: cover;
-}
-.about_me-content-picture::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border-radius: 20%;
   box-shadow: inset 0 0 22px 4px rgb(0, 0, 0), 8px 8px 18px 4px rgba(0, 0, 0, 0.5);
 }
@@ -657,98 +662,116 @@ hr.section-border {
     font-weight: 800;
     word-spacing: 5px;
   }
-  .about_me-picture {
-    display: none;
-    position: absolute;
-    top: 100px;
-    height: 60vh;
-    width: 100%;
-    border-radius: 40px;
-    aspect-ratio: inherit;
-    box-sizing: border-box;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .about_me-picture::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60vh;
-    border-radius: inherit;
-    background-image: linear-gradient(rgb(23, 31, 36) 0%, rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.4) 100%), url("https://dharkaron.github.io/Portfolio/src/assets/img/profile_pic/Profile-pic-04-2.jpg");
-    background-size: cover;
-  }
-  .about_me-picture::after {
-    border-radius: 40px;
-  }
-}
-@media (min-width: 501px) and (max-width: 700px) {
-  .about_me-picture, .about_me-picture::before {
+  .about_me-content-picture {
     height: 50vh;
   }
-  .about_me-content-text {
-    height: 40vh;
-    overflow-y: scroll;
-  }
 }
-@media (width < 500px) {
-  .about_me-picture {
-    display: none;
-  }
-  .about_me {
-    gap: 10px;
-    min-height: 100vh;
-    height: fit-content;
-    padding: 4vh 6vw 20vh;
-  }
-  .about_me-content {
-    position: initial;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: inherit;
-  }
-  .about_me-content-title {
-    position: relative;
-    top: auto;
-    font-size: 40px;
-    text-shadow: 10px 20px 10px rgba(0, 0, 0, 0.3);
-  }
+@media (width < 900px) {
   .about_me-content-text {
-    height: auto;
-    overflow-y: auto;
-    text-shadow: none;
+    font-weight: 800;
+    word-spacing: 5px;
   }
-  .about_me-content-text p {
-    color: rgb(0, 0, 0);
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 40px;
+  .about_me-content-picture {
+    display: none;
   }
 }
 .projects {
   position: relative;
   padding: 80px 30px;
-  min-height: 100vh;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
 }
-.projects-header {
+.projects-title {
   padding: 20px 12vw;
   text-shadow: 10px 20px 10px rgba(0, 0, 0, 0.3);
-}
-.projects-header-title {
   font-size: 40px;
+  align-self: flex-start;
 }
 @media (width < 670px) {
-  .projects-header-title {
+  .projects-title {
     text-align: center;
+  }
+}
+.projects-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 40px;
+  width: 80vw;
+  border-radius: 25px;
+}
+.projects-grid-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 20px;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s;
+  box-shadow: inset 2px 4px 12px rgba(255, 255, 255, 0.8), 10px 20px 10px rgba(0, 0, 0, 0.3);
+}
+.projects-grid-card img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+.projects-grid-card-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  max-width: 100%;
+  font-weight: 400;
+  padding: 15px;
+  border-radius: 0 0 20px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 5px 5px 8px rgba(255, 255, 255, 0.7);
+}
+.projects-grid-card-content .card-title {
+  font-size: 30px;
+}
+.projects-grid-card-content .card-description {
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 5px;
+  width: fit-content;
+}
+.projects-grid-card:hover {
+  box-shadow: inset 2px 4px 12px rgba(255, 255, 255, 0.8), 2px 2px 10px 8px rgba(0, 0, 0, 0.5);
+}
+.projects-grid-card:hover img {
+  transform: scale(1.12);
+}
+@media (width < 900px) {
+  .projects-grid {
+    gap: 50px;
+  }
+  .projects-grid-card {
+    width: 100%;
+    height: 250px;
+  }
+}
+@media (width < 600px) {
+  .projects-grid {
+    gap: 30px;
+  }
+  .projects-grid-card {
+    width: 90%;
+    height: 150px;
   }
 }
 
@@ -1123,12 +1146,6 @@ hr.section-border {
   .landing-introduction-subtitle {
     font-size: 20px;
   }
-}
-
-/* About_me section Anchor */
-#about_me {
-  position: absolute;
-  bottom: -30vh;
 }
 
 .animationTest {

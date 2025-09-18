@@ -34,7 +34,7 @@
 
     <aside class="go-back-top hidden"><a href="#landing-top" aria-label="link to page top"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></a></aside>
 
-    <aside class="modal-container hidden">
+    <aside class="modal-container">
       <div class="modal">
         <button class="close-modal">X</button>
         <h2 class="modal-title">"Oh My Food"</h2>
@@ -73,7 +73,8 @@
           </a>
         </div>
       </div>
-    </aside>  
+    </aside>
+      
 
     <header class="landing" id="landing-top">
 
@@ -115,13 +116,12 @@
                 <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
             </g>
             <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                <path filter:drop-shadow(2px 4px 4px rgba(0 0 0  0.5)); style="filter: drop-shadow(2px 4px 4px rgba(0 0 0 / 0.5));" d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
+                <path filter="drop-shadow( -5px -5px 10px #000 )" style="filter: drop-shadow(2px 4px 4px rgba(0 0 0 / 0.5));" d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
             </g>
         </g>
       </svg>
 
-      <!-- Temporary anchor for the "About Me" section -->
-      <div id="about_me"></div>
+      
 
     </header>
                 
@@ -129,13 +129,13 @@
     <main id="main_container">
       
 
-      <section class="about_me">
+      <section class="about_me" id="about_me">
 
-        <h2 class="about_me-title color-dark_cyan">Je me présente...</h2>
+        <h2 class="about_me-title color-dark_cyan">Je me présente . . .</h2>
 
         <article class="about_me-content">             
             <p class="about_me-content-text"><span class="text-indent-12">Je</span> m'appelle Pierre Gasse, 34 ans, Intégrateur/développeur Frontend. <br><span class="my-job line-height-10 text-indent-12">Mon métier<span class="span-after"> :</span></span>  Concevoir des interfaces visuelles complètes et réactives pour vos applications et sites web.
-              <br><span class="line-height-10 text-indent-12">Je</span> concentre mon travail sur une bonne maitrise des bases de la programmation front-end (html/css/Js)<!-- mise en évidence -->, mais je peux m'adapter pour utiliser différente library et framework selon les travaux à réaliser. <!-- cf categorie "compétences" -->
+              <br><span class="line-height-10 text-indent-12">Je</span> concentre mon travail sur une bonne maitrise des bases de la programmation front-end <a class="skills-linkto navbar-menu-item" href="#skills"> (html/css/Js) </a><!-- mise en évidence --> , mais je peux m'adapter pour utiliser différentes libraries et framework selon les travaux à réaliser. <!-- cf categorie "compétences" -->
               
               <br><span class="line-height-10 text-indent-12">Je</span> suis toujours à la recherche de projets pour continuer à me perfectionner, alors n'hésitez pas à me contacter pour en discuter (lien vers section contact)</p>
            
@@ -143,114 +143,62 @@
 
         </article>
 
-        
-
         <hr class="section-border">
       </section>
 
 
       <!-- Projects Overview -->
       <section class="projects" id="projects">
-
-                  
-          <h2 class="projects-title color-dark_cyan">Mes derniers Projets :</h2>       
-         
                  
-          <!--// conteneur du carousel/slider -->
-        <article class="carousel-container">
-            <ul class="slide-container">
-                         
-              <!-- Code injected with Js from Json data files -->
-               <!-- <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/nina_p9.webp)">                 
-                 <div class="content unselectable">
-                     <h2 class="title">"NINA CARDUCCI"</h2>
-                     <p class="description">Portfolio d'une photographe professionnelle.</p>
-                     <p class="specification">Référencement SEO</p>
-                     <a class="github_link" 
-                        title="Code du projet" 
-                        href="https://github.com/dharkaron/OC_P9-Nina" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="github_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                        </svg>
-                     </a>
-                     <a class="website_link" 
-                        title="Explorer le site" 
-                        href="https://dharkaron.github.io/OC_P9-Nina/" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="link_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/>
-                      </svg>
-                     </a>
-                 </div>
-               </li>
+          <h2 class="projects-title color-dark_cyan">Mes derniers Projets :</h2>       
               
-              <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/ohmyfood_p4.jpg)">                 
-                <div class="content">
-                    <h2 class="title">"OH MY FOOD"</h2>
-                    <p class="description">Réservations en ligne de menu gastronomique.<br> Application orienté mobile.</p>
-                    <p class="specification">HTML & CSS</p>
-                    <a class="github_link" 
-                        title="Code du projet" 
-                        href="https://github.com/dharkaron/OC_P4-Ohmyfood" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="github_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                        </svg>
-                     </a>
-                     <a class="website_link" 
-                        title="Explorer le site" 
-                        href="https://dharkaron.github.io/OC_P4-Ohmyfood/" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="link_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/>
-                      </svg>
-                     </a>
-                </div>
-              </li>
-                  
-              <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/724_p10.png)">
-                  <div class="content unselectable">
-                     <h2 class="title">"724 EVENTS"</h2>
-                     <p class="description">Site vitrine d'une agence évènementielle.</p>
-                     <p class="specification">Corrections de Bugs</p>
-                     <a class="github_link" 
-                        title="Code du projet" 
-                        href="https://github.com/dharkaron/OC_P10-724events" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="github_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                        </svg>
-                     </a>
-                 </div>
-               </li>
-        
-              <li class="slide open-modal" style="background-image: url(./src/assets/img/project_img/bank_p11.jpeg)">
-                <div class="content unselectable">
-                     <h2 class="title">"ARGENT BANK"</h2>
-                     <p class="description">Développement d'une application pour une banque en ligne.</p>
-                     <p class="specification">React & Redux</p>
-                     <a class="github_link" 
-                        title="Code du projet" 
-                        href="https://github.com/dharkaron/OC_P11_ArgentBank" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-                       <svg class="github_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                        </svg>
-                     </a>
-                 </div>
-               </li> -->
-                           
-          </ul>
-          <i class="fa-solid fa-arrow-right slider-btn next-slide"></i>
-                     
-        </article>  
+          <!-- grid container -->
+          <article class="projects-grid">
+            <!-- Template for projects card, injected in html via Js -->
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            <noscript class="projects-grid-card">
+              <img src="/src/assets/img/project_img/Js.jpeg" alt="aperçu_du_projet">
+              <div class="projects-grid-card-content">
+                <h3 class="card-title">JavaScript Needed</h3>
+                <p class="card-description">Please activate Javascript to view this content</p>
+              </div>
+            </noscript>
+            
+          </article>
 
         <hr class="section-border">       
       </section>

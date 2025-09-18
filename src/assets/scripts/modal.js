@@ -7,12 +7,12 @@ const jsonArray = await fetchJsonData("modalData")
 
 export function handleModal() {
   const modalContainer = document.querySelector('.modal-container')
-  const openModal = document.querySelectorAll('.slide')
+  const openModal = document.querySelectorAll('.projects-grid-card')
 
   // close the modal if the user click outside of it
   modalContainer.addEventListener("click", e => {
     if(e.target === modalContainer){
-      console.log("you clicked outside the modal")
+      //console.log("you clicked outside the modal")
       e.preventDefault()
       e.stopPropagation()
       modalContainer.classList.add('hidden')
@@ -22,15 +22,15 @@ export function handleModal() {
   })
 
   // Open the modal when clicking on the active Slide
-   openModal.forEach(slide => {   
-    slide.addEventListener("click", () =>{
-      if(slide.classList.contains('active')){
-        let currentSlideID = slide.id
+   openModal.forEach(card => {   
+    card.addEventListener("click", () =>{      
+        
+      let currentCardID = card.id
 
-        console.log("you clicked the active slide");
-        displayModalContent(modalContainer, currentSlideID)
+        //console.log("you clicked the active slide");
+        displayModalContent(modalContainer, currentCardID)
         modalContainer.classList.remove("hidden")
-      }
+      
     })
   }) 
 }
