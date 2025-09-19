@@ -69,6 +69,8 @@
 
         &:hover{
           filter: drop-shadow( 8px 10px 10px rgba(0,0,0,0.8));
+          animation: wiggle 0.4s linear forwards ;
+          animation: name duration timing-function delay iteration-count direction fill-mode;
         }
 
         & img{

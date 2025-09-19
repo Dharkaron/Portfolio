@@ -38,14 +38,18 @@ export function handleModal() {
 
 
 function displayModalContent(container, slideId){
-  const modal = document.querySelector('.modal')
-  modal.innerHTML = ""
-  console.log(jsonArray)
+  const modalContainer = document.querySelector('.modal-container')
+  modalContainer.innerHTML = ""
+  //console.log(jsonArray)
 
 
   for (let i=0; i < jsonArray.length; i++) {
     if(slideId == jsonArray[i].id){
       console.log(jsonArray[i], jsonArray[i].description, jsonArray[i].description[0])
+
+      // Create the modal
+        const modal = document.createElement('div')
+        modal.classList.add('modal')
 
       // Close Button, to hide the modal
         const closeBtn = document.createElement('button')
@@ -112,11 +116,12 @@ function displayModalContent(container, slideId){
 
         
       // Adding the modal content to the DOM
-        modal.appendChild(closeBtn)
         modal.appendChild(modalTitle)
         modal.appendChild(modalSubtitle)
         modal.appendChild(modalContent)
         modal.appendChild(linkwrapper)
+        modalContainer.appendChild(closeBtn)
+        modalContainer.appendChild(modal)
 
 
       // Event when clicking the 'close' button

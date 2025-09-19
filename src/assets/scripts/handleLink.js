@@ -3,6 +3,7 @@ import { smoothScroll } from "./customScroll.js"
 export function handleLink() {
   const backTopBtn = document.querySelector('.go-back-top')
   const navLinks = document.querySelectorAll('.navbar-menu-item')
+  const contactLink = document.querySelector('.about_me_contact')
 
   navLinks.forEach(link => {
     link.addEventListener("click", (e) =>{
@@ -18,4 +19,8 @@ export function handleLink() {
     smoothScroll('landing-top', 2000)
   })
 
+  contactLink.addEventListener("click", (e)=>{
+    e.preventDefault()
+    smoothScroll('contact_me', 1500)
+  })
 }

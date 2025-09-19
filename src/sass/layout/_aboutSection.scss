@@ -103,7 +103,25 @@
   }
   
 }
+.about_me_contact{
+  width: 30px;
+  height: 30px;
+  transform: translateY(10px) rotate(90deg);
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover{
+    //Apply `$dark-cyan` color using filters
+    filter: invert(26%) 
+            sepia(75%) 
+            saturate(2760%) 
+            hue-rotate(163deg) 
+            brightness(95%) 
+            contrast(101%) 
+            drop-shadow(-3px 5px 2px rgb(0 0 0 / 0.4));
 
+    transform: translateY(5px) rotate(90deg);
+  }
+}
 
 @media (width < 1200px){
 

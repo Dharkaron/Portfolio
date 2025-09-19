@@ -4,7 +4,7 @@
 
 .landing{
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
   box-sizing: border-box;
   color: $main-color;
   overflow: hidden;
@@ -17,13 +17,13 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 150vh;
-    background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url('https://dharkaron.github.io/Portfolio/src/assets/img/background/background_landing.jpg');
+    height: 100vh;
+    background-image: linear-gradient( rgba(23, 31, 36, 1) 0%,rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url('/src/assets/img/background/3d-mountain-landscape-against-sunset-sky.jpg');
     background-size: cover;
   }
   &-border-wave{
     position: absolute;
-    bottom: -50vh;
+    bottom: 0;
     path{
       fill: $main-color;
     }
@@ -60,17 +60,10 @@
         object-fit: cover;     
       }
     }
-    
-    &-title{
-      font-size: 48px;
-    }
-    &-subtitle{
-      font-size: 32px;
-    }
 
     & .welcome_btn, .welcome_btn-small{
       position:relative;
-      font-size: 28px;
+      font-size: 34px;
       font-weight: 600;
       border:1px solid $main-color;
       border-radius: 8px;
@@ -120,8 +113,6 @@
     }
   }
 
-  
-
 
 
 
@@ -159,7 +150,6 @@
 
  
 }
-
 
 
 

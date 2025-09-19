@@ -13,14 +13,26 @@
     "website":"https://dharkaron.github.io/OC_P4-Ohmyfood/"
   },
   {
+    "id":"p6",
+    "title":"SOPHIE BLUEL",   
+    "subtitle":"Création d'une page web dynamique avec Javascript",
+    "description":
+       ["Découverte et application de javascript dans la programmation web",
+        "Connexion avec le backend du site pour stocker/modifier des informations (identifiants, données)",
+        "Mise en place d'un formulaire de connexion pour l'utilisateur",
+        "Découverte des outils d'organisation des projets (kanban de Notion)"
+        ],
+    "picture":"/src/assets/img/project_img/sophie-bluel_p6.png",
+    "github":"https://github.com/Dharkaron/OC_P6-Sophie-Bluel",
+    "website":""
+  },
+  {
     "id":"p9",
     "title":"NINA CARDUCCI",   
-    "subtitle":"Amelioration du référencement SEO d'un site portfolio",
+    "subtitle":"Amélioration du référencement SEO d'un site portfolio",
     "description":
-       ["template a",
-        "template b",
-        "template c",
-        "template d"],
+       ["Découverte des outils d'amélioration pour le référencement d'un site web"       
+        ],
     "picture":"https://dharkaron.github.io/Portfolio/src/assets/img/project_img/nina_p9.webp",
     "github":"https://github.com/dharkaron/OC_P9-Nina",
     "website":"https://dharkaron.github.io/OC_P9-Nina/"
@@ -28,12 +40,11 @@
   {
     "id":"p10",
     "title":"724 EVENTS",   
-    "subtitle":"subtitle",
+    "subtitle":"Correction de bug d'un site web",
     "description":
-       ["template a",
-        "template b",
-        "template c",
-        "template d"],
+       ["Identification de bugs sur un site avec les outils adapté (react dev tools)",
+        "Recherche et correction des bug dans le code du site"
+      ],
     "picture":"https://dharkaron.github.io/Portfolio/src/assets/img/project_img/724_p10.png",
     "github":"https://github.com/dharkaron/OC_P10-724events",
     "website":""
@@ -41,12 +52,12 @@
   {
     "id":"p11",
     "title":"ARGENT BANK",   
-    "subtitle":"subtitle",
+    "subtitle":"Création d'un site web avec React et Redux",
     "description":
-       ["template a",
-        "template b",
-        "template c",
-        "template d"],
+       ["Mise en place du front-end du site avec React",
+        "Intégration avec le backend via des appels API",
+        "Définition de nouveau points d'accès API avec l'outils Swagger"
+        ],
     "picture":"https://dharkaron.github.io/Portfolio/src/assets/img/project_img/bank_p11.jpeg",
     "github":"https://github.com/dharkaron/OC_P11_ArgentBank",
     "website":""

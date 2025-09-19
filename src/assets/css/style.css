@@ -38,6 +38,20 @@
     border-radius: 16px;
   }
 }
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -61,6 +75,21 @@ body {
   max-height: 100%;
   background: rgb(250, 250, 250);
   position: relative;
+}
+
+.noscript-window {
+  position: fixed;
+  z-index: 2000;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
+  padding: 20px;
 }
 
 main {
@@ -430,12 +459,14 @@ hr.section-border {
   z-index: 1001;
   margin: auto;
   width: 75vw;
-  height: 80vh;
+  height: 85vh;
   overflow-y: scroll;
   padding: 10px;
   background: rgb(250, 250, 250);
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   gap: 20px;
   border: 2px solid rgb(156, 156, 156);
@@ -461,16 +492,19 @@ hr.section-border {
 .modal-container .modal-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-height: 35vh;
 }
 .modal-container .modal-content-picture {
-  align-self: flex-end;
   margin: 10px auto;
-  max-width: 300px;
-  max-height: 200px;
-  object-fit: cover;
+  width: 350px;
+  height: 250px;
   border-radius: 20px;
   filter: drop-shadow(0 0 4px rgb(0, 0, 0));
+}
+.modal-container .modal-content-picture img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
 }
 .modal-container .modal-content-description {
   list-style: initial;
@@ -491,10 +525,6 @@ hr.section-border {
   flex-flow: row nowrap;
   justify-content: center;
   gap: 80px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
 }
 .modal-container .modal-links-wrapper .hyperlink:hover > .hyperlink-icon, .modal-container .modal-links-wrapper .hyperlink:hover > .hyperlink-title {
   fill: rgb(0, 138, 137);
@@ -515,10 +545,12 @@ hr.section-border {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5), inset 0 0 8px 1px rgba(0, 0, 0, 0.4);
   transition: 0.2s;
 }
-.modal-container .modal .close-modal {
+
+.close-modal {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  z-index: 1002;
+  top: 5vh;
+  right: 11vw;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -531,14 +563,14 @@ hr.section-border {
   border-radius: 50%;
   transition: 0.5s;
 }
-.modal-container .modal .close-modal:hover {
+.close-modal:hover {
   transform: scale(1.2) rotate(10deg);
 }
 
 @media (width < 1024px) {
   .modal-content {
     display: block !important;
-    max-height: 30vh !important;
+    overflow-wrap: anywhere;
   }
   .modal-content-picture {
     display: none;
@@ -657,6 +689,18 @@ hr.section-border {
   box-shadow: inset 0 0 22px 4px rgb(0, 0, 0), 8px 8px 18px 4px rgba(0, 0, 0, 0.5);
 }
 
+.about_me_contact {
+  width: 30px;
+  height: 30px;
+  transform: translateY(10px) rotate(90deg);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.about_me_contact:hover {
+  filter: invert(26%) sepia(75%) saturate(2760%) hue-rotate(163deg) brightness(95%) contrast(101%) drop-shadow(-3px 5px 2px rgba(0, 0, 0, 0.4));
+  transform: translateY(5px) rotate(90deg);
+}
+
 @media (width < 1200px) {
   .about_me-content-text {
     font-weight: 800;
@@ -677,7 +721,7 @@ hr.section-border {
 }
 .projects {
   position: relative;
-  padding: 80px 30px;
+  padding: 80px 30px 150px 30px;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -702,6 +746,32 @@ hr.section-border {
   gap: 40px;
   width: 80vw;
   border-radius: 25px;
+  background: transparent;
+  border: 4px solid rgb(0, 138, 137);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  padding: 30px 0;
+}
+.projects-grid::before, .projects-grid::after {
+  content: "";
+  position: absolute;
+  background: rgb(250, 250, 250);
+  z-index: -1;
+}
+.projects-grid::before {
+  width: calc(100% - 30px);
+  height: calc(101% + 8px);
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.projects-grid::after {
+  height: calc(100% - 30px);
+  width: calc(101% + 8px);
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .projects-grid-card {
   display: flex;
@@ -721,7 +791,6 @@ hr.section-border {
   position: absolute;
   z-index: -1;
   width: 100%;
-  max-width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
@@ -759,6 +828,7 @@ hr.section-border {
 @media (width < 900px) {
   .projects-grid {
     gap: 50px;
+    border: none;
   }
   .projects-grid-card {
     width: 100%;
@@ -851,6 +921,8 @@ hr.section-border {
 }
 .skills-container-grid figure:hover {
   filter: drop-shadow(8px 10px 10px rgba(0, 0, 0, 0.8));
+  animation: wiggle 0.4s linear forwards;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 .skills-container-grid figure img {
   height: 80px;
@@ -1011,7 +1083,7 @@ hr.section-border {
 /***************************    Landing section _ HomePage     ***************************************/
 .landing {
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
   box-sizing: border-box;
   color: rgb(250, 250, 250);
   overflow: hidden;
@@ -1025,13 +1097,13 @@ hr.section-border {
   top: 0;
   left: 0;
   right: 0;
-  height: 150vh;
-  background-image: linear-gradient(rgb(23, 31, 36) 0%, rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url("https://dharkaron.github.io/Portfolio/src/assets/img/background/background_landing.jpg");
+  height: 100vh;
+  background-image: linear-gradient(rgb(23, 31, 36) 0%, rgba(23, 31, 36, 0.8) 50%, rgba(76, 136, 249, 0.45) 100%), url("/src/assets/img/background/3d-mountain-landscape-against-sunset-sky.jpg");
   background-size: cover;
 }
 .landing-border-wave {
   position: absolute;
-  bottom: -50vh;
+  bottom: 0;
 }
 .landing-border-wave path {
   fill: rgb(250, 250, 250);
@@ -1066,15 +1138,9 @@ hr.section-border {
   border-radius: 50%;
   object-fit: cover;
 }
-.landing-introduction-title {
-  font-size: 48px;
-}
-.landing-introduction-subtitle {
-  font-size: 32px;
-}
 .landing-introduction .welcome_btn, .landing-introduction .welcome_btn-small {
   position: relative;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
   border: 1px solid rgb(250, 250, 250);
   border-radius: 8px;
