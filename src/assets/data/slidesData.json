@@ -8,7 +8,7 @@
   },
   {
     "id":"p6",
-    "img":"src/assets/img/project_img/sophie-bluel_p6.png",
+    "img":"https://dharkaron.github.io/Portfolio/src/assets/img/project_img/sophie-bluel_p6.png",
     "title":"SOPHIE BLUEL",
     "description":"Réservations en ligne de menu gastronomique.<br> Application orienté mobile.",
     "specification":"JavaScript"
